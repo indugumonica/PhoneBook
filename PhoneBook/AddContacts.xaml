@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="PhoneBook.AddContacts"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhoneBook"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="200" Width="300">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" ></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Name: " FontWeight="Bold" Foreground="Navy" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+        <TextBox Name=" nameText" Text="{Binding Name}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Width="135" VerticalAlignment="Center"/>
+
+
+        <TextBlock Text="PhoneNumber: " FontWeight="Bold" Foreground="Navy" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+        <TextBox Name="phoneNumberText" Text="{Binding PhoneNumber}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Width="135" VerticalAlignment="Center"/>
+
+
+
+
+
+        <Button  Foreground="Navy" HorizontalAlignment="Left"  VerticalAlignment="Center"  Click="Button_Click_1" Grid.Row="2" Grid.Column="0">
+            <Image Source="Assets/AddNumber.png"></Image>
+        </Button>
+        <Button  Foreground="Navy" HorizontalAlignment="Right"  VerticalAlignment="Center" Click="Button_Click"  Grid.Row="2" Grid.Column="1">
+            <Image Source="Assets/back.jpg"></Image>
+        </Button>
+
+
+    </Grid>
+</Page>

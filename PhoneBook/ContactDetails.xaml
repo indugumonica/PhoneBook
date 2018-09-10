@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="PhoneBook.ContactDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhoneBook"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="200" Width="250">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation ="Horizontal" Grid.Row="0"  HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center">
+            <TextBlock Text="Name" Width = "120" Foreground="Navy" FontWeight="Bold" />
+            <TextBlock Text="PhoneNumber" Width = "120 " Foreground="Navy" FontWeight="Bold"/>
+        </StackPanel>
+
+        <GridView Name="ContactsGrid" ItemsSource="{Binding}" Grid.Row="1"  >
+
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType ="local:Contacts">
+                    <StackPanel Orientation ="Horizontal"   HorizontalAlignment="Left"  VerticalAlignment="Center" >
+
+                        <TextBlock Text="{x:Bind Name}"  Width ="120" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text="{x:Bind PhoneNumber}"  Width="120" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center">
+            <Button Foreground="Blue" Click="Back_Button" Width="auto"  >
+                <Image Source="Assets/back.jpg" />
+            </Button>
+
+            <Button Click="Delete_Button" Width="auto"  Margin="40,0,0,0">
+                <Image Source="Assets/Delete_Icon.png" />
+            </Button>
+
+        </StackPanel>
+    </Grid>
+</Page>
